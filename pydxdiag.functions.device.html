@@ -1,0 +1,636 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pydxdiag.functions.device package &#8212; pydxdiag 0.1.4.3 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=a590aba8"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pydxdiag.functions.device';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">pydxdiag 0.1.4.3 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/pydxdiag.functions.device.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>pydxdiag.functions.device package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.device.DirectInputDevice">pydxdiag.functions.device.DirectInputDevice module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.DirectInputDevice.GetDirectInputDevices"><code class="docutils literal notranslate"><span class="pre">GetDirectInputDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.device.DisplayDevice">pydxdiag.functions.device.DisplayDevice module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.DisplayDevice.GetDisplayDevices"><code class="docutils literal notranslate"><span class="pre">GetDisplayDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.device.InputRelatedDevice">pydxdiag.functions.device.InputRelatedDevice module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.InputRelatedDevice.GetInputRelatedDeviceViaPS2"><code class="docutils literal notranslate"><span class="pre">GetInputRelatedDeviceViaPS2()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.InputRelatedDevice.GetInputRelatedDevicesViaUSBRoot"><code class="docutils literal notranslate"><span class="pre">GetInputRelatedDevicesViaUSBRoot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.InputRelatedDevice.GetStatusForPollWithInterput"><code class="docutils literal notranslate"><span class="pre">GetStatusForPollWithInterput()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.device.SoundCaptureDevice">pydxdiag.functions.device.SoundCaptureDevice module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.SoundCaptureDevice.GetSoundCaptureDevices"><code class="docutils literal notranslate"><span class="pre">GetSoundCaptureDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.device.SoundDevice">pydxdiag.functions.device.SoundDevice module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.SoundDevice.GetSoundDevices"><code class="docutils literal notranslate"><span class="pre">GetSoundDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.device.SystemDevice">pydxdiag.functions.device.SystemDevice module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.SystemDevice.GetSystemDevices"><code class="docutils literal notranslate"><span class="pre">GetSystemDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.device.VideoCaptureDevice">pydxdiag.functions.device.VideoCaptureDevice module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.VideoCaptureDevice.GetVideoCaptureDevices"><code class="docutils literal notranslate"><span class="pre">GetVideoCaptureDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.device">Module contents</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pydxdiag-functions-device-package">
+<h1>pydxdiag.functions.device package<a class="headerlink" href="#pydxdiag-functions-device-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-pydxdiag.functions.device.DirectInputDevice">
+<span id="pydxdiag-functions-device-directinputdevice-module"></span><h2>pydxdiag.functions.device.DirectInputDevice module<a class="headerlink" href="#module-pydxdiag.functions.device.DirectInputDevice" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.device.DirectInputDevice.GetDirectInputDevices">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.device.DirectInputDevice.</span></span><span class="sig-name descname"><span class="pre">GetDirectInputDevices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pydxdiag.schema.device.html#pydxdiag.schema.device.DirectInputDevice.DirectInputDevice" title="pydxdiag.schema.device.DirectInputDevice.DirectInputDevice"><span class="pre">DirectInputDevice</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pydxdiag.functions.device.DirectInputDevice.GetDirectInputDevices" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the direct input devices from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return List[DirectInputDevice]<span class="colon">:</span></dt>
+<dd class="field-even"><p>The direct input devices information</p>
+</dd>
+<dt class="field-odd">Rtype List[DirectInputDevice]<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[DirectInputDevice]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydxdiag.functions.device.DisplayDevice">
+<span id="pydxdiag-functions-device-displaydevice-module"></span><h2>pydxdiag.functions.device.DisplayDevice module<a class="headerlink" href="#module-pydxdiag.functions.device.DisplayDevice" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.device.DisplayDevice.GetDisplayDevices">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.device.DisplayDevice.</span></span><span class="sig-name descname"><span class="pre">GetDisplayDevices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pydxdiag.schema.device.html#pydxdiag.schema.device.DisplayDevice.DisplayDevice" title="pydxdiag.schema.device.DisplayDevice.DisplayDevice"><span class="pre">DisplayDevice</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pydxdiag.functions.device.DisplayDevice.GetDisplayDevices" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the display devices from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>ElementTree</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return List[DisplayDevice]<span class="colon">:</span></dt>
+<dd class="field-even"><p>The display devices information</p>
+</dd>
+<dt class="field-odd">Rtype List[DisplayDevice]<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[DisplayDevice]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydxdiag.functions.device.InputRelatedDevice">
+<span id="pydxdiag-functions-device-inputrelateddevice-module"></span><h2>pydxdiag.functions.device.InputRelatedDevice module<a class="headerlink" href="#module-pydxdiag.functions.device.InputRelatedDevice" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.device.InputRelatedDevice.GetInputRelatedDeviceViaPS2">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.device.InputRelatedDevice.</span></span><span class="sig-name descname"><span class="pre">GetInputRelatedDeviceViaPS2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pydxdiag.schema.device.html#pydxdiag.schema.device.InputRelatedDevice.InputRelatedDevice" title="pydxdiag.schema.device.InputRelatedDevice.InputRelatedDevice"><span class="pre">InputRelatedDevice</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pydxdiag.functions.device.InputRelatedDevice.GetInputRelatedDeviceViaPS2" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the input related devices via PS2 device tree from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return List[InputRelatedDevice]<span class="colon">:</span></dt>
+<dd class="field-even"><p>The input related devices information</p>
+</dd>
+<dt class="field-odd">Rtype List[InputRelatedDevice]<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[InputRelatedDevice]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.device.InputRelatedDevice.GetInputRelatedDevicesViaUSBRoot">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.device.InputRelatedDevice.</span></span><span class="sig-name descname"><span class="pre">GetInputRelatedDevicesViaUSBRoot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pydxdiag.schema.device.html#pydxdiag.schema.device.InputRelatedDevice.InputRelatedDevice" title="pydxdiag.schema.device.InputRelatedDevice.InputRelatedDevice"><span class="pre">InputRelatedDevice</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pydxdiag.functions.device.InputRelatedDevice.GetInputRelatedDevicesViaUSBRoot" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the input related devices via use root from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return List[InputRelatedDevice]<span class="colon">:</span></dt>
+<dd class="field-even"><p>The input related devices information</p>
+</dd>
+<dt class="field-odd">Rtype List[InputRelatedDevice]<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[InputRelatedDevice]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.device.InputRelatedDevice.GetStatusForPollWithInterput">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.device.InputRelatedDevice.</span></span><span class="sig-name descname"><span class="pre">GetStatusForPollWithInterput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydxdiag.functions.device.InputRelatedDevice.GetStatusForPollWithInterput" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the status for poll with interrupt from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return bool<span class="colon">:</span></dt>
+<dd class="field-even"><p>The status for poll with interrupt</p>
+</dd>
+<dt class="field-odd">Rtype bool<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydxdiag.functions.device.SoundCaptureDevice">
+<span id="pydxdiag-functions-device-soundcapturedevice-module"></span><h2>pydxdiag.functions.device.SoundCaptureDevice module<a class="headerlink" href="#module-pydxdiag.functions.device.SoundCaptureDevice" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.device.SoundCaptureDevice.GetSoundCaptureDevices">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.device.SoundCaptureDevice.</span></span><span class="sig-name descname"><span class="pre">GetSoundCaptureDevices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pydxdiag.schema.device.html#pydxdiag.schema.device.SoundCaptureDevice.SoundCaptureDevice" title="pydxdiag.schema.device.SoundCaptureDevice.SoundCaptureDevice"><span class="pre">SoundCaptureDevice</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pydxdiag.functions.device.SoundCaptureDevice.GetSoundCaptureDevices" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the sound capture devices from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return List[SoundCaptureDevice]<span class="colon">:</span></dt>
+<dd class="field-even"><p>The sound capture devices information</p>
+</dd>
+<dt class="field-odd">Rtype List[SoundCaptureDevice]<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[SoundCaptureDevice]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydxdiag.functions.device.SoundDevice">
+<span id="pydxdiag-functions-device-sounddevice-module"></span><h2>pydxdiag.functions.device.SoundDevice module<a class="headerlink" href="#module-pydxdiag.functions.device.SoundDevice" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.device.SoundDevice.GetSoundDevices">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.device.SoundDevice.</span></span><span class="sig-name descname"><span class="pre">GetSoundDevices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pydxdiag.schema.device.html#pydxdiag.schema.device.SoundDevice.SoundDevice" title="pydxdiag.schema.device.SoundDevice.SoundDevice"><span class="pre">SoundDevice</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pydxdiag.functions.device.SoundDevice.GetSoundDevices" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the sound devices from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return List[SoundDevice]<span class="colon">:</span></dt>
+<dd class="field-even"><p>The sound devices information</p>
+</dd>
+<dt class="field-odd">Rtype List[SoundDevice]<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[SoundDevice]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydxdiag.functions.device.SystemDevice">
+<span id="pydxdiag-functions-device-systemdevice-module"></span><h2>pydxdiag.functions.device.SystemDevice module<a class="headerlink" href="#module-pydxdiag.functions.device.SystemDevice" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.device.SystemDevice.GetSystemDevices">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.device.SystemDevice.</span></span><span class="sig-name descname"><span class="pre">GetSystemDevices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pydxdiag.schema.device.html#pydxdiag.schema.device.SystemDevice.SystemDevice" title="pydxdiag.schema.device.SystemDevice.SystemDevice"><span class="pre">SystemDevice</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pydxdiag.functions.device.SystemDevice.GetSystemDevices" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the system devices from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return List[SystemDevice]<span class="colon">:</span></dt>
+<dd class="field-even"><p>The system devices information</p>
+</dd>
+<dt class="field-odd">Rtype List[SystemDevice]<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[SystemDevice]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydxdiag.functions.device.VideoCaptureDevice">
+<span id="pydxdiag-functions-device-videocapturedevice-module"></span><h2>pydxdiag.functions.device.VideoCaptureDevice module<a class="headerlink" href="#module-pydxdiag.functions.device.VideoCaptureDevice" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.device.VideoCaptureDevice.GetVideoCaptureDevices">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.device.VideoCaptureDevice.</span></span><span class="sig-name descname"><span class="pre">GetVideoCaptureDevices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pydxdiag.schema.device.html#pydxdiag.schema.device.VideoCaptureDevice.VideoCaptureDevice" title="pydxdiag.schema.device.VideoCaptureDevice.VideoCaptureDevice"><span class="pre">VideoCaptureDevice</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pydxdiag.functions.device.VideoCaptureDevice.GetVideoCaptureDevices" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the video capture devices from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return List[VideoCaptureDevice]<span class="colon">:</span></dt>
+<dd class="field-even"><p>The video capture devices information</p>
+</dd>
+<dt class="field-odd">Rtype List[VideoCaptureDevice]<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[VideoCaptureDevice]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydxdiag.functions.device">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pydxdiag.functions.device" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.device.DirectInputDevice">pydxdiag.functions.device.DirectInputDevice module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.DirectInputDevice.GetDirectInputDevices"><code class="docutils literal notranslate"><span class="pre">GetDirectInputDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.device.DisplayDevice">pydxdiag.functions.device.DisplayDevice module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.DisplayDevice.GetDisplayDevices"><code class="docutils literal notranslate"><span class="pre">GetDisplayDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.device.InputRelatedDevice">pydxdiag.functions.device.InputRelatedDevice module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.InputRelatedDevice.GetInputRelatedDeviceViaPS2"><code class="docutils literal notranslate"><span class="pre">GetInputRelatedDeviceViaPS2()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.InputRelatedDevice.GetInputRelatedDevicesViaUSBRoot"><code class="docutils literal notranslate"><span class="pre">GetInputRelatedDevicesViaUSBRoot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.InputRelatedDevice.GetStatusForPollWithInterput"><code class="docutils literal notranslate"><span class="pre">GetStatusForPollWithInterput()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.device.SoundCaptureDevice">pydxdiag.functions.device.SoundCaptureDevice module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.SoundCaptureDevice.GetSoundCaptureDevices"><code class="docutils literal notranslate"><span class="pre">GetSoundCaptureDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.device.SoundDevice">pydxdiag.functions.device.SoundDevice module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.SoundDevice.GetSoundDevices"><code class="docutils literal notranslate"><span class="pre">GetSoundDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.device.SystemDevice">pydxdiag.functions.device.SystemDevice module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.SystemDevice.GetSystemDevices"><code class="docutils literal notranslate"><span class="pre">GetSystemDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.device.VideoCaptureDevice">pydxdiag.functions.device.VideoCaptureDevice module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.device.VideoCaptureDevice.GetVideoCaptureDevices"><code class="docutils literal notranslate"><span class="pre">GetVideoCaptureDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.device">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Elin Liu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Elin Liu.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,807 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pydxdiag.functions package &#8212; pydxdiag 0.1.4.3 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=a590aba8"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pydxdiag.functions';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">pydxdiag 0.1.4.3 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/pydxdiag.functions.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>pydxdiag.functions package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.EnvPowerInformation">pydxdiag.functions.EnvPowerInformation module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.EnvPowerInformation.GetEnvPowerInformation"><code class="docutils literal notranslate"><span class="pre">GetEnvPowerInformation()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.Filter">pydxdiag.functions.Filter module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.Filter.GetFilters"><code class="docutils literal notranslate"><span class="pre">GetFilters()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.Filter.GetPreferredDShowFilters"><code class="docutils literal notranslate"><span class="pre">GetPreferredDShowFilters()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.LogicalDisk">pydxdiag.functions.LogicalDisk module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.LogicalDisk.GetLogicalDisks"><code class="docutils literal notranslate"><span class="pre">GetLogicalDisks()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.SystemInformation">pydxdiag.functions.SystemInformation module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetCPUInformation"><code class="docutils literal notranslate"><span class="pre">GetCPUInformation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetDXDiagInformation"><code class="docutils literal notranslate"><span class="pre">GetDXDiagInformation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetDirectXDebugLevels"><code class="docutils literal notranslate"><span class="pre">GetDirectXDebugLevels()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetDxDiagNotes"><code class="docutils literal notranslate"><span class="pre">GetDxDiagNotes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetFirmwareInformation"><code class="docutils literal notranslate"><span class="pre">GetFirmwareInformation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetGraphicsInfromation"><code class="docutils literal notranslate"><span class="pre">GetGraphicsInfromation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetMachineInformation"><code class="docutils literal notranslate"><span class="pre">GetMachineInformation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetMemoryInformation"><code class="docutils literal notranslate"><span class="pre">GetMemoryInformation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetOSInformation"><code class="docutils literal notranslate"><span class="pre">GetOSInformation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetSystemModelInformation"><code class="docutils literal notranslate"><span class="pre">GetSystemModelInformation()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.WER">pydxdiag.functions.WER module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.WER.GetWERInfo"><code class="docutils literal notranslate"><span class="pre">GetWERInfo()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions">Module contents</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pydxdiag-functions-package">
+<h1>pydxdiag.functions package<a class="headerlink" href="#pydxdiag-functions-package" title="Link to this heading">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pydxdiag.functions.device.html">pydxdiag.functions.device package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.device.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.device.html#module-pydxdiag.functions.device.DirectInputDevice">pydxdiag.functions.device.DirectInputDevice module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.device.html#pydxdiag.functions.device.DirectInputDevice.GetDirectInputDevices"><code class="docutils literal notranslate"><span class="pre">GetDirectInputDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.device.html#module-pydxdiag.functions.device.DisplayDevice">pydxdiag.functions.device.DisplayDevice module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.device.html#pydxdiag.functions.device.DisplayDevice.GetDisplayDevices"><code class="docutils literal notranslate"><span class="pre">GetDisplayDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.device.html#module-pydxdiag.functions.device.InputRelatedDevice">pydxdiag.functions.device.InputRelatedDevice module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.device.html#pydxdiag.functions.device.InputRelatedDevice.GetInputRelatedDeviceViaPS2"><code class="docutils literal notranslate"><span class="pre">GetInputRelatedDeviceViaPS2()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.device.html#pydxdiag.functions.device.InputRelatedDevice.GetInputRelatedDevicesViaUSBRoot"><code class="docutils literal notranslate"><span class="pre">GetInputRelatedDevicesViaUSBRoot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.device.html#pydxdiag.functions.device.InputRelatedDevice.GetStatusForPollWithInterput"><code class="docutils literal notranslate"><span class="pre">GetStatusForPollWithInterput()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.device.html#module-pydxdiag.functions.device.SoundCaptureDevice">pydxdiag.functions.device.SoundCaptureDevice module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.device.html#pydxdiag.functions.device.SoundCaptureDevice.GetSoundCaptureDevices"><code class="docutils literal notranslate"><span class="pre">GetSoundCaptureDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.device.html#module-pydxdiag.functions.device.SoundDevice">pydxdiag.functions.device.SoundDevice module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.device.html#pydxdiag.functions.device.SoundDevice.GetSoundDevices"><code class="docutils literal notranslate"><span class="pre">GetSoundDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.device.html#module-pydxdiag.functions.device.SystemDevice">pydxdiag.functions.device.SystemDevice module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.device.html#pydxdiag.functions.device.SystemDevice.GetSystemDevices"><code class="docutils literal notranslate"><span class="pre">GetSystemDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.device.html#module-pydxdiag.functions.device.VideoCaptureDevice">pydxdiag.functions.device.VideoCaptureDevice module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.device.html#pydxdiag.functions.device.VideoCaptureDevice.GetVideoCaptureDevices"><code class="docutils literal notranslate"><span class="pre">GetVideoCaptureDevices()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.device.html#module-pydxdiag.functions.device">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pydxdiag.functions.sz.html">pydxdiag.functions.sz package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.sz.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.sz.html#module-pydxdiag.functions.sz.szByteStreamHandler">pydxdiag.functions.sz.szByteStreamHandler module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.sz.html#pydxdiag.functions.sz.szByteStreamHandler.GetBytesStreamHandlers"><code class="docutils literal notranslate"><span class="pre">GetBytesStreamHandlers()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.sz.html#module-pydxdiag.functions.sz.szEnabledHardwareMFT">pydxdiag.functions.sz.szEnabledHardwareMFT module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.sz.html#pydxdiag.functions.sz.szEnabledHardwareMFT.GetStatufForEnableHardwareMFT"><code class="docutils literal notranslate"><span class="pre">GetStatufForEnableHardwareMFT()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.sz.html#module-pydxdiag.functions.sz.szMFFileVersions">pydxdiag.functions.sz.szMFFileVersions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.sz.html#pydxdiag.functions.sz.szMFFileVersions.GetMFFileVersions"><code class="docutils literal notranslate"><span class="pre">GetMFFileVersions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.sz.html#module-pydxdiag.functions.sz.szMFTs">pydxdiag.functions.sz.szMFTs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.sz.html#pydxdiag.functions.sz.szMFTs.GetMFTs"><code class="docutils literal notranslate"><span class="pre">GetMFTs()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.sz.html#module-pydxdiag.functions.sz.szPreferredMFT">pydxdiag.functions.sz.szPreferredMFT module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.sz.html#pydxdiag.functions.sz.szPreferredMFT.GetszDiasbledMFTs"><code class="docutils literal notranslate"><span class="pre">GetszDiasbledMFTs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.sz.html#pydxdiag.functions.sz.szPreferredMFT.GetszDisabledMediaSources"><code class="docutils literal notranslate"><span class="pre">GetszDisabledMediaSources()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.sz.html#pydxdiag.functions.sz.szPreferredMFT.GetszPreferedMFTs"><code class="docutils literal notranslate"><span class="pre">GetszPreferedMFTs()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.sz.html#module-pydxdiag.functions.sz.szSchemeHandlers">pydxdiag.functions.sz.szSchemeHandlers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydxdiag.functions.sz.html#pydxdiag.functions.sz.szSchemeHandlers.GetSchemeHandlers"><code class="docutils literal notranslate"><span class="pre">GetSchemeHandlers()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydxdiag.functions.sz.html#module-pydxdiag.functions.sz">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-pydxdiag.functions.EnvPowerInformation">
+<span id="pydxdiag-functions-envpowerinformation-module"></span><h2>pydxdiag.functions.EnvPowerInformation module<a class="headerlink" href="#module-pydxdiag.functions.EnvPowerInformation" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.EnvPowerInformation.GetEnvPowerInformation">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.EnvPowerInformation.</span></span><span class="sig-name descname"><span class="pre">GetEnvPowerInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pydxdiag.schema.html#pydxdiag.schema.EnvPowerInformation.EvrPowerInformation" title="pydxdiag.schema.EnvPowerInformation.EvrPowerInformation"><span class="pre">EvrPowerInformation</span></a></span></span><a class="headerlink" href="#pydxdiag.functions.EnvPowerInformation.GetEnvPowerInformation" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the power information from a dxdiag XML file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The root of the dxdiag XML tree</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The power information in the dxdiag XML file</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>EnvPowerInformation</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydxdiag.functions.Filter">
+<span id="pydxdiag-functions-filter-module"></span><h2>pydxdiag.functions.Filter module<a class="headerlink" href="#module-pydxdiag.functions.Filter" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.Filter.GetFilters">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.Filter.</span></span><span class="sig-name descname"><span class="pre">GetFilters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pydxdiag.schema.html#pydxdiag.schema.Filter.Filter" title="pydxdiag.schema.Filter.Filter"><span class="pre">Filter</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pydxdiag.functions.Filter.GetFilters" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the filters from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return List[Filter]<span class="colon">:</span></dt>
+<dd class="field-even"><p>The filters information</p>
+</dd>
+<dt class="field-odd">Rtype List[Filter]<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[Filter]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.Filter.GetPreferredDShowFilters">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.Filter.</span></span><span class="sig-name descname"><span class="pre">GetPreferredDShowFilters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pydxdiag.functions.Filter.GetPreferredDShowFilters" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the preferred direct show filters from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return List[str]<span class="colon">:</span></dt>
+<dd class="field-even"><p>The preferred direct show filters</p>
+</dd>
+<dt class="field-odd">Rtype List[str]<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydxdiag.functions.LogicalDisk">
+<span id="pydxdiag-functions-logicaldisk-module"></span><h2>pydxdiag.functions.LogicalDisk module<a class="headerlink" href="#module-pydxdiag.functions.LogicalDisk" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.LogicalDisk.GetLogicalDisks">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.LogicalDisk.</span></span><span class="sig-name descname"><span class="pre">GetLogicalDisks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pydxdiag.schema.html#pydxdiag.schema.LogicalDisk.LogicalDisk" title="pydxdiag.schema.LogicalDisk.LogicalDisk"><span class="pre">LogicalDisk</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pydxdiag.functions.LogicalDisk.GetLogicalDisks" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the logical disks from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return List[LogicalDisk]<span class="colon">:</span></dt>
+<dd class="field-even"><p>The logical disks information</p>
+</dd>
+<dt class="field-odd">Rtype List[LogicalDisk]<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[LogicalDisk]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydxdiag.functions.SystemInformation">
+<span id="pydxdiag-functions-systeminformation-module"></span><h2>pydxdiag.functions.SystemInformation module<a class="headerlink" href="#module-pydxdiag.functions.SystemInformation" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.SystemInformation.GetCPUInformation">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.SystemInformation.</span></span><span class="sig-name descname"><span class="pre">GetCPUInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pydxdiag.schema.html#pydxdiag.schema.SystemInformation.CPUInformation" title="pydxdiag.schema.SystemInformation.CPUInformation"><span class="pre">CPUInformation</span></a></span></span><a class="headerlink" href="#pydxdiag.functions.SystemInformation.GetCPUInformation" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the CPU information from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return CPUInformation<span class="colon">:</span></dt>
+<dd class="field-even"><p>The CPU information</p>
+</dd>
+<dt class="field-odd">Rtype CPUInformation<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CPUInformation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.SystemInformation.GetDXDiagInformation">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.SystemInformation.</span></span><span class="sig-name descname"><span class="pre">GetDXDiagInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pydxdiag.schema.html#pydxdiag.schema.SystemInformation.DXDiagInformation" title="pydxdiag.schema.SystemInformation.DXDiagInformation"><span class="pre">DXDiagInformation</span></a></span></span><a class="headerlink" href="#pydxdiag.functions.SystemInformation.GetDXDiagInformation" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the dxdiag information from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return DXDiagInformation<span class="colon">:</span></dt>
+<dd class="field-even"><p>The dxdiag information</p>
+</dd>
+<dt class="field-odd">Rtype DXDiagInformation<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DXDiagInformation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.SystemInformation.GetDirectXDebugLevels">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.SystemInformation.</span></span><span class="sig-name descname"><span class="pre">GetDirectXDebugLevels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pydxdiag.schema.html#pydxdiag.schema.DirectXDebugLevels.DirectXDebugLevels" title="pydxdiag.schema.DirectXDebugLevels.DirectXDebugLevels"><span class="pre">DirectXDebugLevels</span></a></span></span><a class="headerlink" href="#pydxdiag.functions.SystemInformation.GetDirectXDebugLevels" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the DirectX debug levels from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return DirectXDebugLevels<span class="colon">:</span></dt>
+<dd class="field-even"><p>The DirectX debug levels</p>
+</dd>
+<dt class="field-odd">Rtype DirectXDebugLevels<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DirectXDebugLevels</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.SystemInformation.GetDxDiagNotes">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.SystemInformation.</span></span><span class="sig-name descname"><span class="pre">GetDxDiagNotes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pydxdiag.schema.html#pydxdiag.schema.DxDiagNotes.GeneralDXDiagNotes" title="pydxdiag.schema.DxDiagNotes.GeneralDXDiagNotes"><span class="pre">GeneralDXDiagNotes</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pydxdiag.functions.SystemInformation.GetDxDiagNotes" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the dxdiag notes from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return List[GeneralDXDiagNotes]<span class="colon">:</span></dt>
+<dd class="field-even"><p>The dxdiag notes</p>
+</dd>
+<dt class="field-odd">Rtype List[GeneralDXDiagNotes]<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[GeneralDXDiagNotes]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.SystemInformation.GetFirmwareInformation">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.SystemInformation.</span></span><span class="sig-name descname"><span class="pre">GetFirmwareInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pydxdiag.schema.html#pydxdiag.schema.SystemInformation.FirmwareInformation" title="pydxdiag.schema.SystemInformation.FirmwareInformation"><span class="pre">FirmwareInformation</span></a></span></span><a class="headerlink" href="#pydxdiag.functions.SystemInformation.GetFirmwareInformation" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the firmware information from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return FirmwareInformation<span class="colon">:</span></dt>
+<dd class="field-even"><p>The firmware information</p>
+</dd>
+<dt class="field-odd">Rtype FirmwareInformation<span class="colon">:</span></dt>
+<dd class="field-odd"><p>FirmwareInformation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.SystemInformation.GetGraphicsInfromation">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.SystemInformation.</span></span><span class="sig-name descname"><span class="pre">GetGraphicsInfromation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pydxdiag.schema.html#pydxdiag.schema.SystemInformation.GraphicsInformation" title="pydxdiag.schema.SystemInformation.GraphicsInformation"><span class="pre">GraphicsInformation</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pydxdiag.functions.SystemInformation.GetGraphicsInfromation" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the graphics information from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return GraphicsInformation<span class="colon">:</span></dt>
+<dd class="field-even"><p>The graphics information</p>
+</dd>
+<dt class="field-odd">Rtype GraphicsInformation<span class="colon">:</span></dt>
+<dd class="field-odd"><p>GraphicsInformation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.SystemInformation.GetMachineInformation">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.SystemInformation.</span></span><span class="sig-name descname"><span class="pre">GetMachineInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pydxdiag.schema.html#pydxdiag.schema.SystemInformation.MachineInformation" title="pydxdiag.schema.SystemInformation.MachineInformation"><span class="pre">MachineInformation</span></a></span></span><a class="headerlink" href="#pydxdiag.functions.SystemInformation.GetMachineInformation" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the machine information from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return MachineInformation<span class="colon">:</span></dt>
+<dd class="field-even"><p>The machine information</p>
+</dd>
+<dt class="field-odd">Rtype MachineInformation<span class="colon">:</span></dt>
+<dd class="field-odd"><p>MachineInformation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.SystemInformation.GetMemoryInformation">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.SystemInformation.</span></span><span class="sig-name descname"><span class="pre">GetMemoryInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pydxdiag.schema.html#pydxdiag.schema.SystemInformation.MemoryInformation" title="pydxdiag.schema.SystemInformation.MemoryInformation"><span class="pre">MemoryInformation</span></a></span></span><a class="headerlink" href="#pydxdiag.functions.SystemInformation.GetMemoryInformation" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the memory information from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return MemoryInformation<span class="colon">:</span></dt>
+<dd class="field-even"><p>The memory information</p>
+</dd>
+<dt class="field-odd">Rtype MemoryInformation<span class="colon">:</span></dt>
+<dd class="field-odd"><p>MemoryInformation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.SystemInformation.GetOSInformation">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.SystemInformation.</span></span><span class="sig-name descname"><span class="pre">GetOSInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pydxdiag.schema.html#pydxdiag.schema.SystemInformation.OSInformation" title="pydxdiag.schema.SystemInformation.OSInformation"><span class="pre">OSInformation</span></a></span></span><a class="headerlink" href="#pydxdiag.functions.SystemInformation.GetOSInformation" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the OS information from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return OSInformation<span class="colon">:</span></dt>
+<dd class="field-even"><p>The OS information</p>
+</dd>
+<dt class="field-odd">Rtype OSInformation<span class="colon">:</span></dt>
+<dd class="field-odd"><p>OSInformation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.SystemInformation.GetSystemModelInformation">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.SystemInformation.</span></span><span class="sig-name descname"><span class="pre">GetSystemModelInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="pydxdiag.schema.html#pydxdiag.schema.SystemInformation.SystemModelInformation" title="pydxdiag.schema.SystemInformation.SystemModelInformation"><span class="pre">SystemModelInformation</span></a></span></span><a class="headerlink" href="#pydxdiag.functions.SystemInformation.GetSystemModelInformation" title="Link to this definition">#</a></dt>
+<dd><p>Function to get the system model information from the dxdiag xml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – The dxdiag xml</p>
+</dd>
+<dt class="field-even">Return SystemModelInformation<span class="colon">:</span></dt>
+<dd class="field-even"><p>The system model information</p>
+</dd>
+<dt class="field-odd">Rtype SystemModelInformation<span class="colon">:</span></dt>
+<dd class="field-odd"><p>SystemModelInformation</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydxdiag.functions.WER">
+<span id="pydxdiag-functions-wer-module"></span><h2>pydxdiag.functions.WER module<a class="headerlink" href="#module-pydxdiag.functions.WER" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydxdiag.functions.WER.GetWERInfo">
+<span class="sig-prename descclassname"><span class="pre">pydxdiag.functions.WER.</span></span><span class="sig-name descname"><span class="pre">GetWERInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dxXML</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeautifulSoup</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="pydxdiag.schema.html#pydxdiag.schema.WER.WERInformation" title="pydxdiag.schema.WER.WERInformation"><span class="pre">WERInformation</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pydxdiag.functions.WER.GetWERInfo" title="Link to this definition">#</a></dt>
+<dd><p>Functions to get information about Windows Error Reporting from the dxdiag XML output.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dxXML</strong> (<em>BeautifulSoup</em>) – dxdiag XML output</p>
+</dd>
+<dt class="field-even">Return WERInfoList<span class="colon">:</span></dt>
+<dd class="field-even"><p>Windows Error Reporting information</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[WER]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydxdiag.functions">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pydxdiag.functions" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.EnvPowerInformation">pydxdiag.functions.EnvPowerInformation module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.EnvPowerInformation.GetEnvPowerInformation"><code class="docutils literal notranslate"><span class="pre">GetEnvPowerInformation()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.Filter">pydxdiag.functions.Filter module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.Filter.GetFilters"><code class="docutils literal notranslate"><span class="pre">GetFilters()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.Filter.GetPreferredDShowFilters"><code class="docutils literal notranslate"><span class="pre">GetPreferredDShowFilters()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.LogicalDisk">pydxdiag.functions.LogicalDisk module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.LogicalDisk.GetLogicalDisks"><code class="docutils literal notranslate"><span class="pre">GetLogicalDisks()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.SystemInformation">pydxdiag.functions.SystemInformation module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetCPUInformation"><code class="docutils literal notranslate"><span class="pre">GetCPUInformation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetDXDiagInformation"><code class="docutils literal notranslate"><span class="pre">GetDXDiagInformation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetDirectXDebugLevels"><code class="docutils literal notranslate"><span class="pre">GetDirectXDebugLevels()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetDxDiagNotes"><code class="docutils literal notranslate"><span class="pre">GetDxDiagNotes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetFirmwareInformation"><code class="docutils literal notranslate"><span class="pre">GetFirmwareInformation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetGraphicsInfromation"><code class="docutils literal notranslate"><span class="pre">GetGraphicsInfromation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetMachineInformation"><code class="docutils literal notranslate"><span class="pre">GetMachineInformation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetMemoryInformation"><code class="docutils literal notranslate"><span class="pre">GetMemoryInformation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetOSInformation"><code class="docutils literal notranslate"><span class="pre">GetOSInformation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.SystemInformation.GetSystemModelInformation"><code class="docutils literal notranslate"><span class="pre">GetSystemModelInformation()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions.WER">pydxdiag.functions.WER module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydxdiag.functions.WER.GetWERInfo"><code class="docutils literal notranslate"><span class="pre">GetWERInfo()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydxdiag.functions">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Elin Liu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Elin Liu.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
